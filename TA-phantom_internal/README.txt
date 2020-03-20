@@ -1,9 +1,14 @@
+This app is used to collect local phantom logs on a phantom instance and provides basic parsing: https://my.phantom.us/kb/69/
+
+To install an universal forwarder on a Phantom instance follow this guide (note this must use non-standard ports as outlined in the KB article): https://my.phantom.us/kb/105/
+
+This app also utilizes parsing avilable in these apps, you must follow the docs to install these in the environment.
 Requires NGINX TA for Web Parsing: https://splunkbase.splunk.com/app/3258/
 Requires AuditD TA for Audit Parsing: https://splunkbase.splunk.com/app/4232/
 
-Rename inputs.conf.template to inputs.conf and place into local folder. Add an index to each monitor stanza unless you want your data in main index.
+Install TA-phantom_internal on indexers and search heads.
 
-This app collects logs documented here and provides basic parsing: https://my.phantom.us/kb/69/
+To collect logs, on your deployment server rename inputs.conf.template to inputs.conf and place into local folder. Add an index to each monitor stanza unless you want the data in the main index. Set disabled = false for any input you wish to enable. Deploy this out to the universal forwarder you installed above. 
 
 # Phantom Daemon Logs
 
